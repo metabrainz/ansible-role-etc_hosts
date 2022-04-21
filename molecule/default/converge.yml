@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include metabrainz.etc_hosts"
+      include_role:
+        name: "metabrainz.etc_hosts"

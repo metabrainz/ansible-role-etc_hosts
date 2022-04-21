@@ -1,0 +1,7 @@
+#jinja2: trim_blocks: True, lstrip_blocks: True
+# {{ ansible_managed }}
+{% import "etc_hosts-macros.j2" as macros with context %}
+
+{% for key, value in _etc_hosts_entries|dictsort if value is valid_entry %}
+{{ macros.etc_hosts_format_entry(key, value) -}}
+{% endfor %}

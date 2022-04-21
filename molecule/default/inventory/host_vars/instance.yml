@@ -1,0 +1,6 @@
+---
+etc_hosts_host_entries:
+  "127.0.0.42":
+    - "{{ inventory_hostname }}.example.com"
+    - "{{ inventory_hostname }}"
+  "127.0.0.254": []

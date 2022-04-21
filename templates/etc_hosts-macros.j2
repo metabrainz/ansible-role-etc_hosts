@@ -1,0 +1,9 @@
+#jinja2: trim_blocks: True, lstrip_blocks: True
+
+{% macro etc_hosts_format_entry(key, value) -%}
+{% if value is mapping %}
+{{ "%-25s"|format(value.address) }} {{ value.hostnames|join(' ') if value.hostnames is list else value.hostnames }}
+{% else %}
+{{ "%-25s"|format(key) }} {{ value|join(' ') if value is list else value }}
+{% endif %}
+{% endmacro -%}

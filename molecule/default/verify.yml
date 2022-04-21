@@ -1,0 +1,18 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Check /etc/hosts.molecule is valid
+      copy:
+        src: files/hosts.molecule
+        dest: /etc/hosts.molecule
+        mode: 0644
+      check_mode: true
+      register: _etc_hosts
+
+    # this task was added so that we can see the diff in the CI logs
+    - name: Fail if /etc/hosts.molecule is invalid # noqa no-handler
+      fail:
+        msg: /etc/hosts.molecule differs from files/hosts.molecule
+      when: _etc_hosts.changed
