@@ -16,7 +16,7 @@ provisioner:
   name: ansible
   config_options:
     diff:
-      always: True
+      always: true
   playbooks:
     converge: ${MOLECULE_PLAYBOOK:-converge.yml}
   inventory:
