@@ -1,0 +1,16 @@
+galaxy_info:
+  role_name: etc_hosts
+  namespace: metabrainz
+  company: MetaBrainz Foundation
+  author: Adam James (atj)
+  description: Manages /etc/hosts on Ubuntu systems
+  license: CC0
+  min_ansible_version: "2.14"
+  platforms:
+    - name: Ubuntu
+      versions:
+        - focal
+        - jammy
+  galaxy_tags:
+    - hosts
+    - hostsfile
