@@ -3,10 +3,12 @@
   ansible.builtin.template:
     src: etc/hosts.j2
     dest: "{{ etc_hosts_file }}"
-    mode: 0644
+    mode: "0644"
     backup: "{{ etc_hosts_backup | d(omit) }}"
   vars:
     _etc_hosts_entries: >
-      {{ etc_hosts_entries | d({}) |
-      combine(etc_hosts_group_entries | d({}), recursive=True) |
-      combine(etc_hosts_host_entries | d({}), recursive=True) }}
+      {{
+        etc_hosts_entries | d({}) |
+          combine(etc_hosts_group_entries | d({}), recursive=True) |
+          combine(etc_hosts_host_entries | d({}), recursive=True)
+      }}

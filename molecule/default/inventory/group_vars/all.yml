@@ -3,8 +3,8 @@
 etc_hosts_file: /etc/hosts.molecule
 
 etc_hosts_group_entries:
-  "00-primary-ipv4":
-    address: "10.42.42.42"
+  00-primary-ipv4:
+    address: 10.42.42.42
     hostnames:
       - molecule.example.com
       - molecule

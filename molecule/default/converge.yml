@@ -2,6 +2,6 @@
 - name: Converge
   hosts: all
   tasks:
-    - name: "Include metabrainz.etc_hosts"
+    - name: Include metabrainz.etc_hosts
       ansible.builtin.include_role:
-        name: "metabrainz.etc_hosts"
+        name: metabrainz.etc_hosts

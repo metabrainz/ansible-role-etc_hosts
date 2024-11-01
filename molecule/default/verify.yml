@@ -18,7 +18,7 @@
           ff02::1                   ip6-allnodes
           ff02::2                   ip6-allrouters
           ff02::3                   ip6-allhosts
-        mode: 0644
+        mode: "0644"
       check_mode: true
       register: result
       failed_when: result is changed
