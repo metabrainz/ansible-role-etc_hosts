@@ -1,3 +1,4 @@
+---
 galaxy_info:
   role_name: etc_hosts
   namespace: metabrainz
@@ -11,6 +12,7 @@ galaxy_info:
       versions:
         - focal
         - jammy
+        - noble
   galaxy_tags:
     - hosts
     - hostsfile
